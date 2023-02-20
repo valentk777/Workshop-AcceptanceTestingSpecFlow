@@ -1,33 +1,43 @@
-.*.aux
-.*.d
-*.a
-*.cma
-*.cmi
-*.cmo
-*.cmx
-*.cmxa
-*.cmxs
-*.glob
-*.ml.d
-*.ml4.d
-*.mli.d
-*.mllib.d
-*.mlpack.d
-*.native
-*.o
-*.v.d
-*.vio
-*.vo
-*.vok
-*.vos
-.coq-native/
-.csdp.cache
-.lia.cache
-.nia.cache
-.nlia.cache
-.nra.cache
-csdp.cache
-lia.cache
-nia.cache
-nlia.cache
-nra.cache
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+dist
+tmp
+out-tsc
+bazel-out
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode
+
+# Miscellaneous
+.angular/cache
+.sass-cache/
+connect.lock
+coverage
+libpeerconnection.log
+testem.log
+typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# C#
+bin/
+obj/
+
+# Others
