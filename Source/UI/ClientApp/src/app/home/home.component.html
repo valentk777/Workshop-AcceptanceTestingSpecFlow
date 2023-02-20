@@ -1,7 +1,5 @@
 <h1>Tree delivery application!</h1>
 
-<button>Make an order</button>
-
 <form [formGroup]="orderForm" (ngSubmit)="saveOrder()">
   <div class="form-group">
     <label for="treeName">Tree name</label>
@@ -16,6 +14,6 @@
     <input type="text" class="form-control" id="address" name="address" formControlName="address" />
   </div>
   <div class="form-group">
-    <input type="submit" value="save" class="btn btn-primary" />
+    <input type="submit" value="Make an order" class="btn btn-primary" />
   </div>
 </form>

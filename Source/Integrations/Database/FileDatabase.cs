@@ -1,38 +1,33 @@
-﻿using System.Security.Cryptography;
+﻿using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using TreeDeliveryApp.Contracts.Dto;
 using TreeDeliveryApp.Domain.Integrations;
-
 namespace TreeDeliveryApp.Integrations.Database
 {
     public class FileDatabase : IDatabase
     {
-        public readonly string _recordsTableName = "recordsTable.txt";
+        public readonly string _recordsTableName = Path.Join(new DirectoryInfo(Directory.GetCurrentDirectory()).Parent?.FullName, "recordsTable.txt");
 
         public FileDatabase()
-        {
-            LoadDatabase();
-        }
+    {
+        LoadDatabase();
+    }
+    private void LoadDatabase() =>
+    CreateFileIfNotExist(_recordsTableName);
+    public List<TreeRecordDto>? GetAllRecords() =>
+    File.ReadAllLines(_recordsTableName).Select(ToTreeRecordDto).ToList();
+    public List<TreeRecordDto>? GetAllRecords(int type) =>
+    GetAllRecords()?.Where(x => x.Type == type).ToList();
+    public bool SaveOrUpdateRecord(TreeRecordDto order)
+    {
+        var currentOrderKey = GetRecordKey(order);
+        var sameRecordOrDefault = GetAllRecords(order.Type)?.FirstOrDefault(record => GetRecordKey(record) == currentOrderKey);
 
-        private void LoadDatabase() => 
-            CreateFileIfNotExist(_recordsTableName);
-
-        public List<TreeRecordDto>? GetAllRecords() => 
-            File.ReadAllLines(_recordsTableName).Select(ToTreeRecordDto).ToList();
-
-        public List<TreeRecordDto>? GetAllRecords(int type) =>
-            GetAllRecords()?.Where(x => x.Type == type).ToList();
-
-        public bool SaveOrUpdateRecord(TreeRecordDto order)
-        {
-            var currentOrderKey = GetRecordKey(order);
-
-            var sameRecordOrDefault = GetAllRecords(order.Type)?.FirstOrDefault(record => GetRecordKey(record) == currentOrderKey);
-
-            // NOTE: we allow to buy only one tree with same tree name for same requester.
+        // NOTE: we allow to buy only one tree with same tree name for same requester.
             if (sameRecordOrDefault == null)
-            {
-                File.AppendAllText(_recordsTableName, order.ToDatabaseFormat());
+        {
+                File.AppendAllText(_recordsTableName, order.ToDatabaseFormat() + "\r\n");
                 return true;
             }
 
@@ -82,7 +77,7 @@ namespace TreeDeliveryApp.Integrations.Database
         {
             if (!File.Exists(filePath))
             {
-                File.Create(filePath);
+                using FileStream _ = File.Create(filePath);
             }
         }
     }

@@ -4,6 +4,10 @@ namespace TreeDeliveryApp.Contracts.Requests
 {
     public class OrderTreeRequest
     {
-        public Order? OrderedTree { get; set; }
+        public string? TreeName { get; set; }
+
+        public TreeType TreeType { get; set; }
+
+        public string? DeliveryAddress { get; set; }
     }
 }

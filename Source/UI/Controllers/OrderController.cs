@@ -33,13 +33,14 @@ namespace TreeDeliveryApp.Api.Controllers
         }
 
         [HttpPost("")]
-        public ActionResult OrderTree([FromBody] Order order)
+        public ActionResult OrderTree([FromBody] OrderTreeRequest request)
         {
-            if (order == null)
+            if (request == null)
             {
                 return Ok();
             }
 
+            var order = new Order(new Tree(request.TreeName, request.TreeType), request.DeliveryAddress);
             var result = _treeDataProvider.SaveTree(order);
 
             if (result)

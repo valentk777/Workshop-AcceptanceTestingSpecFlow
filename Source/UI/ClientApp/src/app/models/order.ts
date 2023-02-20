@@ -5,3 +5,9 @@ export interface Order {
   deliveryAddress: string;
   deliveryDate: string;
 }
+
+export interface OrderRequest {
+  treeName: string;
+  treeType: number;
+  deliveryAddress: string;
+}
