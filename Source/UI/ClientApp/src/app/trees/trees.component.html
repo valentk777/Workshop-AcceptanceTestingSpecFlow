@@ -1,0 +1,18 @@
+<h1 id="tableLabel">List of all trees</h1>
+
+<p *ngIf="!trees"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="trees">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tree of trees">
+      <td>{{ tree.name }}</td>
+      <td>{{ tree.type }}</td>
+    </tr>
+  </tbody>
+</table>

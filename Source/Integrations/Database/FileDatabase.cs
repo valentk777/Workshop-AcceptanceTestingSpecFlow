@@ -49,7 +49,7 @@ namespace TreeDeliveryApp.Integrations.Database
                 Name = data[0],
                 Type = int.Parse(data[1]),
                 DeliveryAddress = data[2],
-                DeliveryDate = data[3].ToDateTime(),
+                DeliveryDate = data[3].ToDateTimeOrDefault(),
             };
         }
 

@@ -10,7 +10,7 @@ namespace TreeDeliveryApp.Domain.Extensions
             {
                 Tree = new Tree(record.Name, (TreeType)record.Type),
                 DeliveryAddress = record.DeliveryAddress,
-                DeliveryDate = record.DeliveryDate,
+                DeliveryDate = record.DeliveryDate.Value,
             };
 
         public static Tree ToTree(this TreeRecordDto record) =>

@@ -18,7 +18,7 @@ namespace TreeDeliveryApp.Domain
         {
             var orders = _database
                 .GetAllRecords()
-                ?.Where(x => x.DeliveryAddress != null)
+                ?.Where(x => x.DeliveryAddress != null && x.DeliveryDate != null)
                 .Select(x => x.ToOrder())
                 .ToList();
 
@@ -32,7 +32,7 @@ namespace TreeDeliveryApp.Domain
         {
             var orders = _database
                 .GetAllRecords((int)type)
-                ?.Where(x => x.DeliveryAddress != null)
+                ?.Where(x => x.DeliveryAddress != null && x.DeliveryDate != null)
                 .Select(x => x.ToOrder())
                 .ToList();
 

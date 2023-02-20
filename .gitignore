@@ -22,9 +22,11 @@ yarn-error.log
 
 # Visual Studio Code
 .vscode
+.vs
 
 # Miscellaneous
-.angular/cache
+.angular/cache/
+cache/
 .sass-cache/
 connect.lock
 coverage

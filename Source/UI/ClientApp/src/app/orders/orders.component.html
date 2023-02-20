@@ -1,0 +1,22 @@
+<h1 id="tableLabel">List of all orders</h1>
+
+<p *ngIf="!orders"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="orders">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Address</th>
+      <th>Order time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.tree.name }}</td>
+      <td>{{ order.tree.type }}</td>
+      <td>{{ order.deliveryAddress }}</td>
+      <td>{{ order.deliveryDate }}</td>
+    </tr>
+  </tbody>
+</table>

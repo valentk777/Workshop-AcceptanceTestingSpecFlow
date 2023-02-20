@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TreeDeliveryApp.Api.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
     public class AppController : ControllerBase
     {
@@ -22,7 +23,7 @@ namespace TreeDeliveryApp.Api.Controllers
         [HttpGet]
         //TODO: constants
         [Route("tree")]
-        public ActionResult<GetAllTreesResponse> GetAllTrees()
+        public async Task<IActionResult> GetAllTrees()
         {
             var result = _treeDataProvider.GetAllTrees();
             return Ok(result);
@@ -30,7 +31,7 @@ namespace TreeDeliveryApp.Api.Controllers
 
         [HttpGet]
         [Route("tree/type")]
-        public ActionResult<GetAllTreesByTypeResponse> GetAllTreesByType([FromQuery] GetAllTreesByTypeRequest request)
+        public async Task<IActionResult> GetAllTreesByType([FromQuery] GetAllTreesByTypeRequest request)
         {
             var result = _treeDataProvider.GetAllTrees((TreeType)request.TreeType);
             return Ok(result);
@@ -39,7 +40,7 @@ namespace TreeDeliveryApp.Api.Controllers
         [HttpGet]
         //TODO: constants
         [Route("order")]
-        public ActionResult<GetAllOrdersResponse> GetAllOrderedTrees()
+        public async Task<IActionResult> GetAllOrderedTrees()
         {
             var result = _treeDataProvider.GetAllOrderedTrees();
             return Ok(result);
@@ -47,7 +48,7 @@ namespace TreeDeliveryApp.Api.Controllers
 
         [HttpGet]
         [Route("order/type")]
-        public ActionResult<GetAllOrdersByTypeResponse> GetAllOrdersByType([FromQuery] GetAllOrdersByTypeRequest request)
+        public async Task<IActionResult> GetAllOrdersByType([FromQuery] GetAllOrdersByTypeRequest request)
         {
             var result = _treeDataProvider.GetAllOrderedTrees((TreeType)request.Type);
             return Ok(result);
@@ -55,7 +56,7 @@ namespace TreeDeliveryApp.Api.Controllers
 
         [HttpPost]
         [Route("order")]
-        public ActionResult OrderTree([FromBody] OrderTreeRequest request)
+        public async Task<IActionResult> OrderTree([FromBody] OrderTreeRequest request)
         {
             if (request.OrderedTree == null)
             {
