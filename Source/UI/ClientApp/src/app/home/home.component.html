@@ -3,17 +3,17 @@
 <form [formGroup]="orderForm" (ngSubmit)="saveOrder()">
   <div class="form-group">
     <label for="treeName">Tree name</label>
-    <input type="text" class="form-control" id="treeName" name="treeName" formControlName="treeName" />
+    <input type="text" class="form-control" id="treeName" name="tree-name" formControlName="treeName" />
   </div>
   <div class="form-group">
     <label for="treeType">Tree type (1-5)</label>
-    <input type="text" class="form-control" id="treeType" name="treeType" formControlName="treeType" />
+    <input type="text" class="form-control" id="treeType" name="tree-type" formControlName="treeType" />
   </div>
   <div class="form-group">
-    <label for="address">Delivery address</label>
-    <input type="text" class="form-control" id="address" name="address" formControlName="address" />
+    <label for="deliveryAddress">Delivery address</label>
+    <input type="text" class="form-control" id="deliveryAddress" name="delivery-address" formControlName="deliveryAddress" />
   </div>
   <div class="form-group">
-    <input type="submit" value="Make an order" class="btn btn-primary" />
+    <input type="submit" value="Make an order" name="submit-order" class="btn btn-primary" />
   </div>
 </form>

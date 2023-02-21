@@ -1,7 +1,7 @@
-﻿
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
+using TreeDelivaryApp.AutomationTests;
 
-namespace TreeDelivaryApp.Tests.Steps 
+namespace TreeDelivaryApp.Tests.Steps
 {
     [Binding]
     public class GetTreeSteps 
@@ -9,7 +9,15 @@ namespace TreeDelivaryApp.Tests.Steps
         [Given(@"enter valid tree name (.*)")]
         public void GivenValidTreeName(string treeName) 
         {
-            ScenarioContext.StepIsPending();
+            // this is just testing if application service works. need to rewrite ti use hooks 
+            var uiHandler = new UICommandsHandler();
+            uiHandler.OpenApplication();
+            uiHandler.NavigateToHomePage();
+            uiHandler.NavigateToTreesPage();
+            uiHandler.NavigateToOrdersPage();
+            uiHandler.NavigateToHomePage();
+            uiHandler.FillOrderInfo("test1", 5, "test3");
+            uiHandler.Dispose();
         }
 
         [When(@"press the button (.*)")]
@@ -18,7 +26,7 @@ namespace TreeDelivaryApp.Tests.Steps
             ScenarioContext.StepIsPending();
         }
 
-        [Then(@"ordered succesfully")]
+        [Then(@"ordered successfully")]
         public void OrderSuccess()
         {
             ScenarioContext.StepIsPending();

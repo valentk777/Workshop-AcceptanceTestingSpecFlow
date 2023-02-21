@@ -23,13 +23,14 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" name="nav-home" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" name="nav-trees" [routerLink]="['/trees']">Trees</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/trees']">Trees</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/orders']">Orders</a>
+            <a class="nav-link text-dark" name="nav-orders" [routerLink]="['/orders']">Orders</a>
           </li>
         </ul>
       </div>

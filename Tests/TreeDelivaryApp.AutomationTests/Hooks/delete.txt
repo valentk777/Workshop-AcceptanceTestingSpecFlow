@@ -1,0 +1,2 @@
+﻿This file just to commit actual hook file to git. 
+later when you add something to hooks file - delete this file.

@@ -16,18 +16,18 @@ export class HomeComponent {
     this.orderForm = this.formBuilder.group({
       treeName: [],
       treeType: [],
-      address: []
+      deliveryAddress: []
     });
     this.baseUrl = baseUrl;
   }
 
   public saveOrder(): void {
     console.log(this.orderForm.value);
-
-    this.http.post<OrderRequest>(this.baseUrl + 'order', this.orderForm.value).subscribe(result => {
-      console.log(result);
-    },
-      error => console.error(error)
-    );
+    this.orderForm.reset();
+    //this.http.post<OrderRequest>(this.baseUrl + 'order', this.orderForm.value).subscribe(result => {
+    //  console.log(result);
+    //},
+    //  error => console.error(error)
+    //);
   }
 }
