@@ -1,4 +1,5 @@
-﻿using TechTalk.SpecFlow;
+﻿using FluentAssertions;
+using TechTalk.SpecFlow;
 using TreeDelivaryApp.AutomationTests;
 
 namespace TreeDelivaryApp.Tests.Steps
@@ -6,42 +7,40 @@ namespace TreeDelivaryApp.Tests.Steps
     [Binding]
     public class GetTreeSteps 
     {
-        [Given(@"enter valid tree name (.*)")]
-        public void GivenValidTreeName(string treeName) 
+        UICommandsHandler _driver = new UICommandsHandler();
+
+        [Given(@"Open application web page")]
+        public void OpenApp() 
         {
-            // this is just testing if application service works. need to rewrite ti use hooks 
-            var uiHandler = new UICommandsHandler();
-            uiHandler.OpenApplication();
-            uiHandler.NavigateToHomePage();
-            uiHandler.NavigateToTreesPage();
-            uiHandler.NavigateToOrdersPage();
-            uiHandler.NavigateToHomePage();
-            uiHandler.FillOrderInfo("test1", 5, "test3");
-            uiHandler.Dispose();
+            _driver.OpenApplication();
         }
 
-        [When(@"press the button (.*)")]
-        public void WhenMakeOrderButtonIsPressed(string buttonName)
+        [Then(@"Close web page")]
+        public void CloseApp() 
         {
-            ScenarioContext.StepIsPending();
+            _driver.Dispose();
         }
 
-        [Then(@"ordered successfully")]
+        [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
+        public void WhenThreeOrderFormIsFilledInCorrecly(string treeName, int treeType, string deliverAdress) 
+        {
+            //_driver.NavigateToTreesPage();
+            //_driver.NavigateToOrdersPage();
+            //_driver.NavigateToHomePage();
+            _driver.FillOrderInfo(treeName, treeType, deliverAdress);
+        }
+
+        [When(@"Press submit button")]
+        public void WhenMakeOrderButtonIsPressed()
+        {
+            _driver.SubmitOrder();
+        }
+
+        [Then(@"Ordered successfully")]
         public void OrderSuccess()
         {
-            ScenarioContext.StepIsPending();
-        }
-
-        [Given(@"enter invalid tree name (.*)")]
-        public void GivenInvalidTreeName(string treeName)
-        {
-            ScenarioContext.StepIsPending();
-        }
-
-        [Then(@"order fails")]
-        public void OrderFail()
-        {
-            ScenarioContext.StepIsPending();
+            var ordersuccess = _driver.OrdedSuccess();
+            ordersuccess.Should().Be(true);
         }
     }
 }

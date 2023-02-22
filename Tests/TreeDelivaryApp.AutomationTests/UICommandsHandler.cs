@@ -17,6 +17,7 @@ namespace TreeDelivaryApp.AutomationTests
         public void OpenApplication()
         {
             _driver.Navigate().GoToUrl(ApplicationUrl);
+            _driver.Manage().Window.Maximize();
             //Thread.Sleep(2000);
         }
 
@@ -46,20 +47,19 @@ namespace TreeDelivaryApp.AutomationTests
             FillOrderName(name);
             FillOrderTreeType(treeType);
             FillOrderAddress(addrees);
-            SubmitOrder();
         }
 
         public void FillOrderName(string name)
         {
             IWebElement element = _driver.FindElement(By.Name("tree-name"));
             element.SendKeys(name);
-            //Thread.Sleep(2000);
+           // Thread.Sleep(2000);
         }
         public void FillOrderTreeType(int treeType)
         {
             IWebElement element = _driver.FindElement(By.Name("tree-type"));
             element.SendKeys(treeType.ToString());
-            //Thread.Sleep(2000);
+           // Thread.Sleep(2000);
         }
 
         public void FillOrderAddress(string addrees)
@@ -74,6 +74,13 @@ namespace TreeDelivaryApp.AutomationTests
             IWebElement element = _driver.FindElement(By.Name("submit-order"));
             element.Click();
             //Thread.Sleep(3000);
+        }
+
+        public bool OrdedSuccess() 
+        {
+            IWebElement element = _driver.FindElement(By.Name("success"));
+            //Thread.Sleep(2000);
+            return element.Displayed;
         }
 
         public void Dispose()

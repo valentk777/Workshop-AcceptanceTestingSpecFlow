@@ -11,6 +11,7 @@ import { OrderRequest } from '../models/order'
 export class HomeComponent {
   public orderForm: FormGroup;
   private baseUrl: string;
+  public edited = false;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.orderForm = this.formBuilder.group({
@@ -24,6 +25,7 @@ export class HomeComponent {
   public saveOrder(): void {
     console.log(this.orderForm.value);
     this.orderForm.reset();
+    this.edited = true;
     //this.http.post<OrderRequest>(this.baseUrl + 'order', this.orderForm.value).subscribe(result => {
     //  console.log(result);
     //},
