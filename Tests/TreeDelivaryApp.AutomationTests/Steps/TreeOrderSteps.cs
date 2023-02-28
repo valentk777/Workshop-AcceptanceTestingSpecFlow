@@ -7,18 +7,12 @@ namespace TreeDelivaryApp.Tests.Steps
     [Binding]
     public class GetTreeSteps 
     {
-        UICommandsHandler _driver = new UICommandsHandler();
+        private readonly WebDriverContext _webDriverContext;
+        private UICommandsHandler _commandsHandler;
 
-        [BeforeScenario]
-        public void OpenApp() 
+        public GetTreeSteps(UICommandsHandler commandsHandler)
         {
-            _driver.OpenApplication();
-        }
-
-        [AfterScenario]
-        public void CloseApp()
-        {
-            _driver.Dispose();
+            _commandsHandler = commandsHandler;
         }
 
         [When(@"Fill tree form with tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
@@ -28,19 +22,19 @@ namespace TreeDelivaryApp.Tests.Steps
             //_driver.NavigateToTreesPage();
             //_driver.NavigateToOrdersPage();
             //_driver.NavigateToHomePage();
-            _driver.FillOrderInfo(treeName, treeType, deliverAdress);
+            _commandsHandler.FillOrderInfo(treeName, treeType, deliverAdress);
         }
 
         [When(@"Press submit button")]
         public void WhenMakeOrderButtonIsPressed()
         {
-            _driver.SubmitOrder();
+            _commandsHandler.SubmitOrder();
         }
 
         [Then(@"Ordered successfully")]
         public void OrderSuccess()
         {
-            var ordersuccess = _driver.OrdedSuccess();
+            var ordersuccess = _commandsHandler.OrdedSuccess();
             ordersuccess.Should().Be(true);
         }
     }
