@@ -9,18 +9,19 @@ namespace TreeDelivaryApp.Tests.Steps
     {
         UICommandsHandler _driver = new UICommandsHandler();
 
-        [Given(@"Open application web page")]
+        [BeforeScenario]
         public void OpenApp() 
         {
             _driver.OpenApplication();
         }
 
-        [Then(@"Close web page")]
-        public void CloseApp() 
+        [AfterScenario]
+        public void CloseApp()
         {
             _driver.Dispose();
         }
 
+        [When(@"Fill tree form with tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
         [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
         public void WhenThreeOrderFormIsFilledInCorrecly(string treeName, int treeType, string deliverAdress) 
         {

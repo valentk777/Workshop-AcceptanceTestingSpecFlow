@@ -20,13 +20,15 @@ namespace TreeDelivaryApp.AutomationTests.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Xunit.TraitAttribute("Category", "TreeOrder")]
+    [Xunit.TraitAttribute("Category", "asd")]
     public partial class TreeCanBeOrderedFeature : object, Xunit.IClassFixture<TreeCanBeOrderedFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "TreeOrder"};
+                "TreeOrder",
+                "asd"};
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
@@ -100,9 +102,6 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("Open application web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 8
  testRunner.When("Fill tree order form with valid tree name test1, valid tree type 1 and delivery a" +
                         "dress Brivibas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -114,7 +113,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("Ordered successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 11
- testRunner.Then("Close web page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("Valentinas wants a working app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             }
             this.ScenarioCleanup();
