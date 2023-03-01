@@ -7,6 +7,7 @@ namespace TreeDelivaryApp.AutomationTests.Hooks
     public class TreeDeliveryAppHooks
     {
         private UICommandsHandler _commandsHandler;
+
         public TreeDeliveryAppHooks(UICommandsHandler commandsHandler) 
         {
             _commandsHandler = commandsHandler;

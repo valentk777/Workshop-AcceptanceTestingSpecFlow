@@ -11,7 +11,7 @@ namespace TreeDelivaryApp.AutomationTests
 
         public UICommandsHandler(WebDriverContext webDriverContext)
         {
-            this._webDriverContext = webDriverContext;
+            _webDriverContext = webDriverContext;
         }
 
         public void OpenApplication()
@@ -55,6 +55,7 @@ namespace TreeDelivaryApp.AutomationTests
             element.SendKeys(name);
             // Thread.Sleep(2000);
         }
+
         public void FillOrderTreeType(int treeType)
         {
             IWebElement element = _webDriverContext.chromeDriver.FindElement(By.Name("tree-type"));

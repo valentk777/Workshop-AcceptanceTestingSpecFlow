@@ -7,7 +7,6 @@ namespace TreeDelivaryApp.Tests.Steps
     [Binding]
     public class GetTreeSteps 
     {
-        private readonly WebDriverContext _webDriverContext;
         private UICommandsHandler _commandsHandler;
 
         public GetTreeSteps(UICommandsHandler commandsHandler)

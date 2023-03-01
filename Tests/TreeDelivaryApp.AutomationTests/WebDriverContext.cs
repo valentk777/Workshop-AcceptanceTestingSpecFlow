@@ -7,6 +7,6 @@ public class WebDriverContext
 
     public WebDriverContext()
     {
-        this.chromeDriver = new ChromeDriver();
+        chromeDriver = new ChromeDriver();
     }
 }
