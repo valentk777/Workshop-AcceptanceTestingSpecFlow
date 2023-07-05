@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TreeDelivaryApp.AutomationTests.Features
+namespace TreeDeliveryApp.AutomationTests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace TreeDelivaryApp.AutomationTests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ThisFeatureIsIngoredFeature : object, Xunit.IClassFixture<ThisFeatureIsIngoredFeature.FixtureData>, System.IDisposable
+    public partial class ThisFeatureIsIgnoredFeature : object, Xunit.IClassFixture<ThisFeatureIsIgnoredFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -32,7 +32,7 @@ namespace TreeDelivaryApp.AutomationTests.Features
 #line 1 "IgnoreFeature.feature"
 #line hidden
         
-        public ThisFeatureIsIngoredFeature(ThisFeatureIsIngoredFeature.FixtureData fixtureData, TreeDelivaryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ThisFeatureIsIgnoredFeature(ThisFeatureIsIgnoredFeature.FixtureData fixtureData, TreeDeliveryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -41,7 +41,7 @@ namespace TreeDelivaryApp.AutomationTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "This feature is ingored", null, ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "This feature is ignored", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,7 +82,7 @@ namespace TreeDelivaryApp.AutomationTests.Features
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Add new tree to the shop", Skip="Ignored")]
-        [Xunit.TraitAttribute("FeatureTitle", "This feature is ingored")]
+        [Xunit.TraitAttribute("FeatureTitle", "This feature is ignored")]
         [Xunit.TraitAttribute("Description", "Add new tree to the shop")]
         public void AddNewTreeToTheShop()
         {
