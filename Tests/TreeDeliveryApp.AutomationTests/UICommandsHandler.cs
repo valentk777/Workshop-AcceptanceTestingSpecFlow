@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 
-namespace TreeDelivaryApp.AutomationTests
+namespace TreeDeliveryApp.AutomationTests
 {
     public class UICommandsHandler : IDisposable
     {

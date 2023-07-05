@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TreeDelivaryApp.AutomationTests.Features
+namespace TreeDeliveryApp.AutomationTests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -33,7 +33,7 @@ namespace TreeDelivaryApp.AutomationTests.Features
 #line 1 "GetTree.feature"
 #line hidden
         
-        public TreeCanBeOrderedFeature(TreeCanBeOrderedFeature.FixtureData fixtureData, TreeDelivaryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public TreeCanBeOrderedFeature(TreeCanBeOrderedFeature.FixtureData fixtureData, TreeDeliveryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();

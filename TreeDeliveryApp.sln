@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "Source\UI\UI.csproj", "{6C3A16A7-0BB3-4EB0-A548-A3A211B755BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeDelivaryApp.AutomationTests", "Tests\TreeDelivaryApp.AutomationTests\TreeDelivaryApp.AutomationTests.csproj", "{C130724E-4AC3-4788-957F-544E708EB4E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeDeliveryApp.AutomationTests", "Tests\TreeDeliveryApp.AutomationTests\TreeDeliveryApp.AutomationTests.csproj", "{C130724E-4AC3-4788-957F-544E708EB4E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

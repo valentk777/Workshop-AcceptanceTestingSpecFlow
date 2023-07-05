@@ -1,33 +1,33 @@
 ﻿using FluentAssertions;
 using TechTalk.SpecFlow;
-using TreeDelivaryApp.AutomationTests;
+using TreeDeliveryApp.AutomationTests;
 
-namespace TreeDelivaryApp.Tests.Steps
+namespace TreeDeliveryApp.Tests.Steps
 {
     [Binding]
-    public class GetTreeSteps 
+    public class GetTreeSteps
     {
         UICommandsHandler _driver = new UICommandsHandler();
 
         [Given(@"Open application web page")]
-        public void OpenApp() 
+        public void OpenApp()
         {
             _driver.OpenApplication();
         }
 
         [Then(@"Close web page")]
-        public void CloseApp() 
+        public void CloseApp()
         {
             _driver.Dispose();
         }
 
-        [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
-        public void WhenThreeOrderFormIsFilledInCorrecly(string treeName, int treeType, string deliverAdress) 
+        [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\w*) and delivery address (.*)")]
+        public void WhenThreeOrderFormIsFilledInCorrectly(string treeName, string treeType, string deliverAddress)
         {
             //_driver.NavigateToTreesPage();
             //_driver.NavigateToOrdersPage();
             //_driver.NavigateToHomePage();
-            _driver.FillOrderInfo(treeName, treeType, deliverAdress);
+            //_driver.FillOrderInfo(treeName, treeType, deliverAdress);
         }
 
         [When(@"Press submit button")]

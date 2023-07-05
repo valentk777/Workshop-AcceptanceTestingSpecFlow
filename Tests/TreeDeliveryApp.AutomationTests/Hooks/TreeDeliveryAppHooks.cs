@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace TreeDelivaryApp.AutomationTests.Hooks
+namespace TreeDeliveryApp.AutomationTests.Hooks
 {
     public class TreeDeliveryAppHooks
     {
