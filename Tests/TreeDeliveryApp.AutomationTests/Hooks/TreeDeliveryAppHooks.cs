@@ -2,20 +2,32 @@
 
 namespace TreeDeliveryApp.AutomationTests.Hooks
 {
+    [Binding]
     public class TreeDeliveryAppHooks
     {
-        //private readonly UICommandsHandler driver = new UICommandsHandler();
+        private UICommandsHandler _commandsHandler;
 
-        //[BeforeScenario]
-        //public void StartScenario()
-        //{
-        //    driver.OpenApplication();
-        //}
+        public TreeDeliveryAppHooks(UICommandsHandler commandsHandler) 
+        {
+            _commandsHandler = commandsHandler;
+        }
+        
+        [BeforeScenario(Order = 0)]
+        public void StartScenario()
+        {
+            _commandsHandler.OpenApplication();
+        }
 
-        //[AfterScenario]
-        //public void AfterScenario()
-        //{
-        //    driver.Dispose();
-        //}
+        [BeforeScenario(Order = 1)]
+        public void DoSomething() 
+        {
+            Console.WriteLine("Hello");
+        }
+
+        [AfterScenario]
+        public void AfterScenario()
+        {
+            _commandsHandler.Dispose();
+        }
     }
 }

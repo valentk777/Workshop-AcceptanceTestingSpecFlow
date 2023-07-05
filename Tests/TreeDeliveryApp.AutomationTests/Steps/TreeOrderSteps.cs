@@ -7,39 +7,33 @@ namespace TreeDeliveryApp.Tests.Steps
     [Binding]
     public class GetTreeSteps
     {
-        UICommandsHandler _driver = new UICommandsHandler();
+        private UICommandsHandler _commandsHandler;
 
-        [Given(@"Open application web page")]
-        public void OpenApp()
+        public GetTreeSteps(UICommandsHandler commandsHandler)
         {
-            _driver.OpenApplication();
+            _commandsHandler = commandsHandler;
         }
 
-        [Then(@"Close web page")]
-        public void CloseApp()
-        {
-            _driver.Dispose();
-        }
-
-        [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\w*) and delivery address (.*)")]
-        public void WhenThreeOrderFormIsFilledInCorrectly(string treeName, string treeType, string deliverAddress)
+        [When(@"Fill tree form with tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
+        [When(@"Fill tree order form with valid tree name (.*), valid tree type (.\d*) and delivery adress (.*)")]
+        public void WhenThreeOrderFormIsFilledInCorrecly(string treeName, int treeType, string deliverAdress) 
         {
             //_driver.NavigateToTreesPage();
             //_driver.NavigateToOrdersPage();
             //_driver.NavigateToHomePage();
-            //_driver.FillOrderInfo(treeName, treeType, deliverAdress);
+            _commandsHandler.FillOrderInfo(treeName, treeType, deliverAdress);
         }
 
         [When(@"Press submit button")]
         public void WhenMakeOrderButtonIsPressed()
         {
-            _driver.SubmitOrder();
+            _commandsHandler.SubmitOrder();
         }
 
         [Then(@"Ordered successfully")]
         public void OrderSuccess()
         {
-            var ordersuccess = _driver.OrdedSuccess();
+            var ordersuccess = _commandsHandler.OrdedSuccess();
             ordersuccess.Should().Be(true);
         }
     }

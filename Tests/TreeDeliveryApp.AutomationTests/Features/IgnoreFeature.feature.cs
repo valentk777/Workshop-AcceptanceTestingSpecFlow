@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace TreeDeliveryApp.AutomationTests.Features
+namespace TreeDelivaryApp.AutomationTests.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,23 +19,20 @@ namespace TreeDeliveryApp.AutomationTests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [Xunit.TraitAttribute("Category", "TreeOrder")]
-    [Xunit.TraitAttribute("Category", "asd")]
-    public partial class TreeCanBeOrderedFeature : object, Xunit.IClassFixture<TreeCanBeOrderedFeature.FixtureData>, System.IDisposable
+    public partial class ThisFeatureIsIngoredFeature : object, Xunit.IClassFixture<ThisFeatureIsIngoredFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = new string[] {
-                "TreeOrder",
-                "asd"};
+                "ignore"};
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "GetTree.feature"
+#line 1 "IgnoreFeature.feature"
 #line hidden
         
-        public TreeCanBeOrderedFeature(TreeCanBeOrderedFeature.FixtureData fixtureData, TreeDeliveryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public ThisFeatureIsIngoredFeature(ThisFeatureIsIngoredFeature.FixtureData fixtureData, TreeDelivaryApp_AutomationTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -44,7 +41,7 @@ namespace TreeDeliveryApp.AutomationTests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Tree can be ordered", "\tAs a user\r\n\tI want to order a tree", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "This feature is ingored", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -84,16 +81,16 @@ namespace TreeDeliveryApp.AutomationTests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Tree is ordered successfully")]
-        [Xunit.TraitAttribute("FeatureTitle", "Tree can be ordered")]
-        [Xunit.TraitAttribute("Description", "Tree is ordered successfully")]
-        public void TreeIsOrderedSuccessfully()
+        [Xunit.SkippableFactAttribute(DisplayName="Add new tree to the shop", Skip="Ignored")]
+        [Xunit.TraitAttribute("FeatureTitle", "This feature is ingored")]
+        [Xunit.TraitAttribute("Description", "Add new tree to the shop")]
+        public void AddNewTreeToTheShop()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Tree is ordered successfully", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-this.ScenarioInitialize(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add new tree to the shop", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 4
+ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -102,14 +99,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 5
  testRunner.When("Fill tree order form with valid tree name test1, valid tree type 1 and delivery a" +
                         "dress Brivibas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 6
  testRunner.And("Press submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
+#line 7
  testRunner.Then("Ordered successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -123,12 +120,10 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                TreeCanBeOrderedFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                TreeCanBeOrderedFeature.FeatureTearDown();
             }
         }
     }
